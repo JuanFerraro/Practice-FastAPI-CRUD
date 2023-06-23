@@ -11,6 +11,7 @@
 <body>
     <section class="add_persona">
         <h3>Agregar Nueva Persona</h3>
+        <hr>
         <form action="/personas" method="POST" name="nueva_persona" class="nueva_persona" id="persona-form">
             <div class="mb-2">
                 <label class="form-label">Nombre</label>
@@ -42,6 +43,15 @@
                         Añadir
                     </button>
                 </center>
+            </div>
+        </form>
+    </section>
+    <section class="lista_personas">
+        <h3>Lista de Personas</h3>
+        <hr>
+        <form action="/personas/busqueda" class="d-flex" role="search">
+            <input class="form-control me-2" name="id" type="search" placeholder="Buscar" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
     </section>
     <script src="/static/js/script.js"></script>

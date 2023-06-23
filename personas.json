@@ -38,5 +38,13 @@
         "edad": 26,
         "estudios": "Estudiante de Ingenieria",
         "puntaje": 8.9
+    },
+    {
+        "nombre": "Sara",
+        "apellido": "Zuluaga",
+        "id": "10228756",
+        "edad": 30,
+        "estudios": "Administrador DB",
+        "puntaje": 8.9
     }
 ]
