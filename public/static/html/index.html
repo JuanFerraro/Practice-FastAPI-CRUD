@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Python FastAPI</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <section class="add_persona">
+        <h3>Agregar Nueva Persona</h3>
+        <form action="/personas" method="POST" name="nueva_persona" class="nueva_persona">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" placeholder="Nombre">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellido</label>
+                <input type="text" class="form-control" placeholder="Apellido">
+            </div>
+        </form>
+    </section>
+</body>
+</html>

@@ -1,0 +1,11 @@
+body {
+    background-color: darkseagreen;
+}
+
+.add_persona{
+    margin: 100px;
+}
+
+.form-group {
+    margin-bottom: 6px;
+}
