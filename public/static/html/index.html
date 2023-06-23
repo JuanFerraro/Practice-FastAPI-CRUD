@@ -11,16 +11,39 @@
 <body>
     <section class="add_persona">
         <h3>Agregar Nueva Persona</h3>
-        <form action="/personas" method="POST" name="nueva_persona" class="nueva_persona">
-            <div class="mb-3">
+        <form action="/personas" method="POST" name="nueva_persona" class="nueva_persona" id="persona-form">
+            <div class="mb-2">
                 <label class="form-label">Nombre</label>
-                <input type="text" class="form-control" placeholder="Nombre">
+                <input type="text" class="form-control" name="nombre" placeholder="Nombre" required>
             </div>
-            <div class="mb-3">
+            <div class="mb-2">
                 <label class="form-label">Apellido</label>
-                <input type="text" class="form-control" placeholder="Apellido">
+                <input type="text" class="form-control" name="apellido" placeholder="Apellido" required>
             </div>
+            <div class="mb-2">
+                <label class="form-label">Identificacion</label>
+                <input type="text" class="form-control" name="id" placeholder="Identificacion" required>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Edad</label>
+                <input type="number" class="form-control" name="edad" placeholder="Edad" required>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Estudios y/o Experiencia</label>
+                <textarea class="form-control" name="estudios" placeholder="Estudios y/o Experiencia" required></textarea>
+            </div>
+            <div class="mb-2">
+                <label class="form-label">Puntaje</label>
+                <input type="number" step="0.1" class="form-control" name="puntaje" placeholder="Puntaje" required>
+            </div>
+            <div class="form-group">
+                <center>
+                    <button class="btn btn-primary" type="submit">
+                        Añadir
+                    </button>
+                </center>
         </form>
     </section>
+    <script src="/static/js/script.js"></script>
 </body>
 </html>

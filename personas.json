@@ -30,5 +30,13 @@
         "edad": 32,
         "estudios": "Administrador DB",
         "puntaje": 7.0
+    },
+    {
+        "nombre": "Felipe",
+        "apellido": "Arzuaga",
+        "id": "12349809",
+        "edad": 26,
+        "estudios": "Estudiante de Ingenieria",
+        "puntaje": 8.9
     }
 ]
