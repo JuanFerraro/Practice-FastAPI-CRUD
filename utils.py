@@ -15,6 +15,6 @@ def escribir_personas(personas: list):
 def buscar_persona(personas: list, id: str):
     encontrado = next((persona for persona in personas if persona['id'] == id), None)
     if encontrado != None:
-        return True
+        return encontrado
     else: 
         return False

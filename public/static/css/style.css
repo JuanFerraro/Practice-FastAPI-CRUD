@@ -1,18 +1,3 @@
 body {
     background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    display: grid;
-    grid-template-columns: 50% [col-start] 50% [col-start]
-
-}
-
-.add_persona{
-    margin: 75px;
-}
-
-.lista_personas{
-    margin: 75px;
-}
-
-.form-group {
-    margin-bottom: 6px;
 }

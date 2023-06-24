@@ -54,5 +54,13 @@
         "edad": 43,
         "estudios": "Project Manager ",
         "puntaje": 6.6
+    },
+    {
+        "nombre": "Juan",
+        "apellido": "Martinez",
+        "id": "10203041",
+        "edad": 27,
+        "estudios": "Arquitecto de software",
+        "puntaje": 7.9
     }
 ]
