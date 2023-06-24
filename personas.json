@@ -46,5 +46,13 @@
         "edad": 30,
         "estudios": "Administrador DB",
         "puntaje": 8.9
+    },
+    {
+        "nombre": "Sandra",
+        "apellido": "Martins",
+        "id": "23984432",
+        "edad": 43,
+        "estudios": "Project Manager ",
+        "puntaje": 6.6
     }
 ]

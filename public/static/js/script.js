@@ -1,4 +1,4 @@
-const form = document.getElementById('persona-form');
+const form = document.getElementById('nueva_persona');
     form.addEventListener('submit', async (event) => {
         event.preventDefault(); // Evita el envío del formulario
         const formData = new FormData(form);
