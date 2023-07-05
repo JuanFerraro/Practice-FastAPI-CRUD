@@ -6,5 +6,13 @@
         "edad": 26,
         "estudios": "Estudiante",
         "puntaje": 5.0
+    },
+    {
+        "nombre": "Sebastian",
+        "apellido": "Barrios",
+        "id": "1022036042",
+        "edad": 26,
+        "estudios": "Estudiante",
+        "puntaje": 5.0
     }
 ]

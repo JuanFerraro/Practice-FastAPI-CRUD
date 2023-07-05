@@ -25,12 +25,13 @@ def principal(request: Request):
 
 # GET: Mostrar todas las personas
 @app.get('/personas', tags = ['personas'])
-def lista_personas():
-    personas = leer_personas()
+def lista_personas(request: Request):
+    """ personas = leer_personas()
     if personas != False:
         return JSONResponse(content=personas, status_code=200)
     else:
-        raise HTTPException(status_code=401, detail="No hay personas")
+        raise HTTPException(status_code=401, detail="No hay personas") """
+    return templates.TemplateResponse("index.html", {"request": request})
 
 # POST: Ruta para agregar persona 
 @app.post('/personas', tags = ['personas'])
@@ -45,6 +46,7 @@ def agregar_persona(persona: Persona = Depends(Persona.as_form)):
     personas.append(nueva_persona)
     escribir_personas(personas) #Escribo en el archivo la nueva lista
     return JSONResponse(content='Persona agregada correctamente', status_code=201)
+    
 
 # GET: Buscar persona por id
 @app.get('/personas/{id}', tags=['personas'])

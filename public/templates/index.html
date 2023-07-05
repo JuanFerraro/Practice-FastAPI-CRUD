@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD Python FastAPI</title>
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
+
 <body>
-    <section class="seccion">
+    <section>
         <center><h1 class="titulo">⏳ CRUD Python FastAPI ⏳</h1></center>
         <div class="container">
             <h4>Realización CRUD básico utilizando FastAPI</h4>
@@ -17,42 +20,64 @@
             <p>Parte visual proximamente ⏳</p>
         </div>
     </section>
-    <section>
-        <div class="form-card">
-            <form action="/personas" method="POST" class="add-form">
-                <div class="mb-3">
-                    <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" required>
-                </div>
-                <div class="mb-3">
-                    <label for="apellido" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido" required>
-                </div>
-                <div class="mb-3">
-                    <label for="id" class="form-label">Identificacion</label>
-                    <input type="text" class="form-control" name="id" id="id" placeholder="Identificacion" required>
-                </div>
-                <div class="mb-3">
-                    <label for="edad" class="form-label">Edad</label>
-                    <input type="number" class="form-control" name="edad" id="edad" placeholder="Edad" required>
-                </div>
-                <div class="mb-3">
-                    <label for="estudios" class="form-label">Estudios</label>
-                    <textarea class="form-control" id="estudios" name="estudios" id="estudios" rows="3" required></textarea>
-                </div>
-                <div class="mb-3">
-                    <label for="puntaje" class="form-label">Puntaje</label>
-                    <input type="number" step="0.01" class="form-control" name="puntaje" id="puntaje" placeholder="Puntaje" required>
-                </div>
+    <dic class="main-container">
+        <section class="main-item">
+            <h4>Agregar Nueva Persona</h4>
+            <div class="form-card">
+                <form action="/personas" method="POST" class="add-form">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" required
+                            minlength="3" maxlength="25">
+                    </div>
+                    <div class="mb-3">
+                        <label for="apellido" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido"
+                            required minlength="3" maxlength="25">
+                    </div>
+                    <div class="mb-3">
+                        <label for="id" class="form-label">Identificacion</label>
+                        <input type="text" class="form-control" name="id" id="id" placeholder="Identificacion" required
+                            minlength="7" maxlength="10">
+                    </div>
+                    <div class="mb-3">
+                        <label for="edad" class="form-label">Edad</label>
+                        <input type="number" class="form-control" name="edad" id="edad" placeholder="Edad" required
+                            min="16" max="98">
+                    </div>
+                    <div class="mb-3">
+                        <label for="estudios" class="form-label">Estudios</label>
+                        <textarea class="form-control" id="estudios" name="estudios" id="estudios" rows="3" required
+                            minlength="7" maxlength="50"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="puntaje" class="form-label">Puntaje</label>
+                        <input type="number" step="0.01" class="form-control" name="puntaje" id="puntaje"
+                            placeholder="Puntaje" required min="0" max="10">
+                    </div>
+                    <div class="form-group">
+                        <center>
+                            <button class="btn btn-primary btn-block" type="submit">
+                                Añadir
+                            </button>
+                        </center>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="main-item">
+            <h4>Más Información acá</h4>
+            <form action="/personas" method="get">
                 <div class="form-group">
                     <center>
                         <button class="btn btn-primary btn-block" type="submit">
-                            Añadir
+                            Ver listado de personas
                         </button>
                     </center>
                 </div>
             </form>
-        </div>
-    </section>
+        </section>
+    </div>
 </body>
+
 </html>
