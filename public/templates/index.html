@@ -14,7 +14,9 @@
 <body>
     <section>
         <div class="info">
-            <center><h1 class="titulo">⏳ CRUD Python FastAPI ⏳</h1></center>
+            <center>
+                <h1 class="titulo">⏳ CRUD Python FastAPI ⏳</h1>
+            </center>
             <div class="info-container">
                 <h4>Realización CRUD básico utilizando FastAPI</h4>
                 <p>Para probar los metodos GET, POST, PUT y DELETE acceda a /docs</p>
@@ -22,7 +24,15 @@
             </div>
         </div>
     </section>
-    <dic class="main-container">
+    <div class="message">
+        {% if message %}
+            {% include 'success.html' %}
+        {% endif %}
+        {% if error %}
+            {% include 'not-found.html' %}
+        {% endif %}
+    </div>
+    <div class="main-container">
         <section class="main-item">
             <h4>Agregar Nueva Persona</h4>
             <div class="form-card">
@@ -78,17 +88,20 @@
                     </center>
                 </div>
                 <div class="list-cards">
-                    {% if error %}
-                        {% include 'not-found.html' %}
-                    {% endif %}
                     {% for persona in personas %}
                         {% include 'card.html' %}
                     {% endfor %}
+                    {% if edit_person %}
+                        {% include 'edit-person.html' %}
+                    {% endif %}
                 </div>
             </form>
         </section>
     </div>
 </body>
 <!-- Bootstrap Script -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
 </html>

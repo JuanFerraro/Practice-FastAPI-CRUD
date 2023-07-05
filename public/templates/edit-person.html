@@ -1,0 +1,44 @@
+<section class="main-item">
+    <h4>Actualizar Persona: {{edit_person.nombre}} {{edit_person.apellido}}</h4>
+    <div class="form-card">
+        <form action="/personas/update/{{edit_person.id}}" method="POST" class="add-form">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" required
+                    minlength="3" maxlength="25" value="{{edit_person.nombre}}">
+            </div>
+            <div class="mb-3">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido"
+                    required minlength="3" maxlength="25" value="{{edit_person.apellido}}">
+            </div>
+            <div class="mb-3">
+                <label for="id" class="form-label">Identificacion</label>
+                <input type="text" class="form-control" name="id" id="id" placeholder="Identificacion" required
+                    minlength="7" maxlength="10" value="{{edit_person.id}}" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="edad" class="form-label">Edad</label>
+                <input type="number" class="form-control" name="edad" id="edad" placeholder="Edad" required
+                    min="16" max="98" value="{{edit_person.edad}}">
+            </div>
+            <div class="mb-3">
+                <label for="estudios" class="form-label">Estudios</label>
+                <textarea class="form-control" id="estudios" name="estudios" id="estudios" rows="3" required
+                    minlength="7" maxlength="50">{{ edit_person.estudios }}</textarea>
+            </div>
+            <div class="mb-3">
+                <label for="puntaje" class="form-label">Puntaje</label>
+                <input type="number" step="0.01" class="form-control" name="puntaje" id="puntaje"
+                    placeholder="Puntaje" required min="0" max="10" value="{{edit_person.puntaje}}">
+            </div>
+            <div class="form-group">
+                <center>
+                    <button class="btn btn-primary btn-block" type="submit">
+                        Actualizar
+                    </button>
+                </center>
+            </div>
+        </form>
+    </div>
+</section>

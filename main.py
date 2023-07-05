@@ -1,5 +1,5 @@
 # FastAPI
-from fastapi import FastAPI, Form, Request, HTTPException, Depends
+from fastapi import FastAPI, Form, Query, Request, HTTPException, Depends
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -27,24 +27,25 @@ def principal(request: Request):
 @app.get('/personas', tags = ['personas'])
 def lista_personas(request: Request):
     personas = leer_personas()
-    if personas == False:
+    if personas != False:
         return templates.TemplateResponse("index.html", {"request": request, "personas": personas})
     else:
-        # raise HTTPException(status_code=401, detail="No hay personas")
         error = "No hay personas registradas."
         return templates.TemplateResponse("index.html", {"request": request, "error": error})
 
 # POST: Ruta para agregar persona 
 @app.post('/personas', tags = ['personas'])
-def agregar_persona(persona: Persona = Depends(Persona.as_form)):
+def agregar_persona(request: Request, persona: Persona = Depends(Persona.as_form)):
     personas = leer_personas()
     nueva_persona = persona.dict()
     for persona in personas:
         if persona['id'] == nueva_persona['id']:
-            return HTTPException(status_code=400, detail="Persona ya existente")
+            error = 'Persona ya registrada! verifica el ID'
+            return templates.TemplateResponse("index.html", {"request": request, "error": error})
     personas.append(nueva_persona)
     escribir_personas(personas) #Escribo en el archivo la nueva lista
-    return JSONResponse(content='Persona agregada correctamente', status_code=201)
+    message = "Persona agregada correctamente."
+    return templates.TemplateResponse("index.html", {"request": request, "message": message})
     
 
 # GET: Buscar persona por id
@@ -57,11 +58,21 @@ def busqueda_persona(id: str):
     else:
         return JSONResponse(content=persona)
 
-# PUT: Actualizar persona por id
-@app.put('/personas/{id}', tags=['personas'])
-def actualizar_persona(id: str, persona: Persona):
+# Edit route
+@app.get('/personas/edit/{id}', tags=['personas'])
+def update_person(request: Request, id: str):
+    personas = leer_personas()
+    for person in personas:
+        if id == person['id']:
+            edit_person = person
+    return templates.TemplateResponse("index.html", {"request": request, "edit_person": edit_person})
+
+# PUT: Actualizar persona por id (changed to post)
+@app.post('/personas/update/', tags=['personas'])
+def actualizar_persona(request: Request, persona: Persona = Depends(Persona.as_form)):
     personas = leer_personas()
     update_persona = persona.dict()
+    print(persona)
     for persona in personas:
         if persona['id'] == update_persona['id']:
             persona['nombre'] = update_persona['nombre']          
@@ -71,11 +82,12 @@ def actualizar_persona(id: str, persona: Persona):
             persona['estudios'] = update_persona['estudios']          
             persona['puntaje'] = update_persona['puntaje']   
             escribir_personas(personas) #Escribo en el archivo la lista actualizada
-            return JSONResponse(status_code=200, content='Persona actualizada')       
+            message = "Persona actualizada correctamente."
+            return templates.TemplateResponse("index.html", {"request": request, "message": message})
     return HTTPException(status_code=404, detail='Persona no encontrada')
 
-# DELETE: Eliminar persona por id
-@app.delete('/personas/{id}', tags=['personas'])
+# DELETE: Eliminar persona por id (changed to get)
+@app.get('/personas/delete/{id}', tags=['personas'])
 def eliminar_persona(id):
     personas = leer_personas()
     for persona in personas:

@@ -38,6 +38,12 @@ p{
     align-items: center;
 }
 
+.message{
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .form-card{
     margin: 5px;
@@ -67,4 +73,11 @@ p{
 .card-body{
     display: flex;
     flex-direction: column;
+}
+
+.form-buttons{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
 }

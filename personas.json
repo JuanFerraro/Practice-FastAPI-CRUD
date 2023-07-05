@@ -5,7 +5,7 @@
         "id": "1022036041",
         "edad": 26,
         "estudios": "Estudiante",
-        "puntaje": 5.0
+        "puntaje": 1.0
     },
     {
         "nombre": "Sebastian",
@@ -22,5 +22,13 @@
         "edad": 25,
         "estudios": "Estudiante",
         "puntaje": 5.3
+    },
+    {
+        "nombre": "Sebastian",
+        "apellido": "Ferraro",
+        "id": "1022036044",
+        "edad": 26,
+        "estudios": "Estudiante",
+        "puntaje": 2.0
     }
 ]
