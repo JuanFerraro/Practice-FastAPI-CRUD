@@ -1,8 +1,13 @@
-from fastapi import FastAPI, Request, HTTPException
+# FastAPI
+from fastapi import FastAPI, Form, Request, HTTPException, Depends
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+
+# Models
 from models import Persona
+
+# Utils
 from utils import leer_personas, escribir_personas, buscar_persona
 
 app = FastAPI()
@@ -29,7 +34,9 @@ def lista_personas():
 
 # POST: Ruta para agregar persona 
 @app.post('/personas', tags = ['personas'])
-def agregar_persona(persona: Persona):
+def agregar_persona(persona: Persona = Depends(Persona.as_form)):
+    print(persona)
+    print(type(persona))
     personas = leer_personas()
     nueva_persona = persona.dict()
     for persona in personas:

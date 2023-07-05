@@ -7,6 +7,21 @@ body {
     grid-template-columns: 1;
 }
 
+.form-card{
+    margin: 5px;
+    width: 25rem;
+    border-color: rgb(151, 151, 151);
+    border-style:double
+}
+
+.add-form{
+    margin: 10px;
+}
+
+.form-label{
+    margin-bottom: 0.1rem;
+}
+
 .container{
     width: 35%;
     margin-top: 15px;

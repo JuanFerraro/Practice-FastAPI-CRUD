@@ -2,57 +2,9 @@
     {
         "nombre": "Juan",
         "apellido": "Barrios",
-        "id": "10203040",
-        "edad": 23,
-        "estudios": "Fundamentos de Python",
-        "puntaje": 6.5
-    },
-    {
-        "nombre": "Sara",
-        "apellido": "Portocarrero",
-        "id": "10203050",
-        "edad": 29,
-        "estudios": "Programadora 10 a\u00c3\u00b1os de experiencia",
-        "puntaje": 8.9
-    },
-    {
-        "nombre": "Luis",
-        "apellido": "Caba\u00c3\u00b1as",
-        "id": "10201050",
-        "edad": 25,
-        "estudios": "Dise\u00c3\u00b1ador web",
-        "puntaje": 7.7
-    },
-    {
-        "nombre": "Sebastian",
-        "apellido": "Barrios",
-        "id": "10908010",
-        "edad": 32,
-        "estudios": "Administrador DB",
-        "puntaje": 7.0
-    },
-    {
-        "nombre": "Felipe",
-        "apellido": "Arzuaga",
-        "id": "12349809",
+        "id": "1022036041",
         "edad": 26,
-        "estudios": "Estudiante de Ingenieria",
-        "puntaje": 8.9
-    },
-    {
-        "nombre": "Sara",
-        "apellido": "Zuluaga",
-        "id": "10228756",
-        "edad": 30,
-        "estudios": "Administrador DB",
-        "puntaje": 8.9
-    },
-    {
-        "nombre": "Sandra",
-        "apellido": "Martins",
-        "id": "23984432",
-        "edad": 43,
-        "estudios": "Project Manager ",
-        "puntaje": 6.6
+        "estudios": "Estudiante",
+        "puntaje": 5.0
     }
 ]
