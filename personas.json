@@ -14,5 +14,13 @@
         "edad": 26,
         "estudios": "Estudiante",
         "puntaje": 5.0
+    },
+    {
+        "nombre": "Juan",
+        "apellido": "Ferraro",
+        "id": "1022036043",
+        "edad": 25,
+        "estudios": "Estudiante",
+        "puntaje": 5.3
     }
 ]

@@ -7,7 +7,15 @@ p{
     all: unset;
 }
 
-.container{
+.info{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+
+.info-container{
     width: 470px;
     display: flex;
     flex-direction: column;
@@ -38,6 +46,16 @@ p{
     border-style:double
 }
 
+.list-cards{
+    margin: 10px;
+    display: flex;
+    columns: 2;
+    flex-flow: row wrap;
+    column-gap: 10px;
+    row-gap: 10px;
+    justify-content: center;
+}
+
 .add-form{
     margin: 10px;
 }
@@ -46,3 +64,7 @@ p{
     margin-bottom: 0.1rem;
 }
 
+.card-body{
+    display: flex;
+    flex-direction: column;
+}

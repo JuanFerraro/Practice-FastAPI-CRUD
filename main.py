@@ -26,18 +26,17 @@ def principal(request: Request):
 # GET: Mostrar todas las personas
 @app.get('/personas', tags = ['personas'])
 def lista_personas(request: Request):
-    """ personas = leer_personas()
-    if personas != False:
-        return JSONResponse(content=personas, status_code=200)
+    personas = leer_personas()
+    if personas == False:
+        return templates.TemplateResponse("index.html", {"request": request, "personas": personas})
     else:
-        raise HTTPException(status_code=401, detail="No hay personas") """
-    return templates.TemplateResponse("index.html", {"request": request})
+        # raise HTTPException(status_code=401, detail="No hay personas")
+        error = "No hay personas registradas."
+        return templates.TemplateResponse("index.html", {"request": request, "error": error})
 
 # POST: Ruta para agregar persona 
 @app.post('/personas', tags = ['personas'])
 def agregar_persona(persona: Persona = Depends(Persona.as_form)):
-    print(persona)
-    print(type(persona))
     personas = leer_personas()
     nueva_persona = persona.dict()
     for persona in personas:
