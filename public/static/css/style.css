@@ -52,6 +52,12 @@ p{
     border-style:double
 }
 
+.show-search{
+    display: flex;
+    flex-direction: row;
+    column-gap: 5px;
+}
+
 .list-cards{
     margin: 10px;
     display: flex;

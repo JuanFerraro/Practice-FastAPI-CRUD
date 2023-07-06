@@ -78,20 +78,30 @@
             </div>
         </section>
         <section class="main-item">
-            <h4>Más Información acá</h4>
-            <form action="/personas" method="get">
-                <div class="form-group">
-                    <center>
-                        <button class="btn btn-primary btn-block" type="submit">
-                            Ver listado de personas
-                        </button>
-                    </center>
-                </div>
-            </form>
+            <div class="show-search">
+                <form action="/personas/search" class="d-flex" role="search" method="GET">
+                    <input class="form-control me-2" type="text" name="id" placeholder="Buscar persona por id" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">
+                        Buscar
+                    </button>
+                </form>
+                <form action="/personas" method="get">
+                    <div class="form-group">
+                            <button class="btn btn-primary btn-block" type="submit">
+                                Ver listado de personas
+                            </button>
+                    </div>
+                </form>
+            </div>
             <div class="list-cards">
-                {% for persona in personas %}
+                {% if personas %}
+                    {% for persona in personas %}
+                        {% include 'card.html' %}
+                    {% endfor %}
+                {% endif %}
+                {% if persona %}
                     {% include 'card.html' %}
-                {% endfor %}
+                {% endif %}
             </div>
             <div class="update-person">
                 {% if edit_person %}

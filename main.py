@@ -1,4 +1,5 @@
 # FastAPI
+from anyio import Path
 from fastapi import FastAPI, Form, Query, Request, HTTPException, Depends
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
@@ -48,14 +49,16 @@ def agregar_persona(request: Request, persona: Persona = Depends(Persona.as_form
     return templates.TemplateResponse("index.html", {"request": request, "message": message})
     
 # GET: Buscar persona por id
-@app.get('/personas/{id}', tags=['personas'])
-def busqueda_persona(id: str):
+@app.get('/personas/search', tags=['personas'])
+def busqueda_persona(request: Request, id: str = Query()):
+    print(id)
+    print(type(id))
     personas = leer_personas()
     persona = buscar_persona(personas, id)
     if persona == False:
         raise HTTPException(status_code=404, detail="Persona no encontrada")
     else:
-        return JSONResponse(content=persona)
+        return templates.TemplateResponse("index.html", {"request": request, "persona": persona})
 
 # Edit route
 @app.get('/personas/edit/{id}', tags=['personas'])
