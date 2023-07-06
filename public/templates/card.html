@@ -1,3 +1,4 @@
+{% block content %}
 <div class="card" style="width: 18rem;">
     <div class="card-body">
         <h5 class="card-title">{{persona.nombre}} {{persona.apellido}}</h5>
@@ -8,7 +9,6 @@
         <div class="form-buttons">
             <form action="/personas/edit/{{persona.id}}" method="GET">
                 <div class="form-group">
-                    <input type="hidden" name="id" value="{{persona.id}}">
                     <button class="btn btn-outline-primary btn-block" type="submit">
                         Editar
                     </button>
@@ -24,3 +24,4 @@
         </div>
     </div>
 </div>
+{% endblock %}

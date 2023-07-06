@@ -87,15 +87,17 @@
                         </button>
                     </center>
                 </div>
-                <div class="list-cards">
-                    {% for persona in personas %}
-                        {% include 'card.html' %}
-                    {% endfor %}
-                    {% if edit_person %}
-                        {% include 'edit-person.html' %}
-                    {% endif %}
-                </div>
             </form>
+            <div class="list-cards">
+                {% for persona in personas %}
+                    {% include 'card.html' %}
+                {% endfor %}
+            </div>
+            <div class="update-person">
+                {% if edit_person %}
+                    {% include 'edit-person.html' %}
+                {% endif %}
+            </div>
         </section>
     </div>
 </body>

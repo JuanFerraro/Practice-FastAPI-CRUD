@@ -1,7 +1,8 @@
+{% block content %}
 <section class="main-item">
     <h4>Actualizar Persona: {{edit_person.nombre}} {{edit_person.apellido}}</h4>
     <div class="form-card">
-        <form action="/personas/update/{{edit_person.id}}" method="POST" class="add-form">
+        <form action="/personas/update/" method="POST" class="add-form">
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre" required
@@ -42,3 +43,4 @@
         </form>
     </div>
 </section>
+{% endblock %}

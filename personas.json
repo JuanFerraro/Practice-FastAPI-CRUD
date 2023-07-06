@@ -5,30 +5,6 @@
         "id": "1022036041",
         "edad": 26,
         "estudios": "Estudiante",
-        "puntaje": 1.0
-    },
-    {
-        "nombre": "Sebastian",
-        "apellido": "Barrios",
-        "id": "1022036042",
-        "edad": 26,
-        "estudios": "Estudiante",
-        "puntaje": 5.0
-    },
-    {
-        "nombre": "Juan",
-        "apellido": "Ferraro",
-        "id": "1022036043",
-        "edad": 25,
-        "estudios": "Estudiante",
-        "puntaje": 5.3
-    },
-    {
-        "nombre": "Sebastian",
-        "apellido": "Ferraro",
-        "id": "1022036044",
-        "edad": 26,
-        "estudios": "Estudiante",
-        "puntaje": 2.0
+        "puntaje": 3.3
     }
 ]

@@ -27,7 +27,7 @@ def principal(request: Request):
 @app.get('/personas', tags = ['personas'])
 def lista_personas(request: Request):
     personas = leer_personas()
-    if personas != False:
+    if personas:
         return templates.TemplateResponse("index.html", {"request": request, "personas": personas})
     else:
         error = "No hay personas registradas."
@@ -47,7 +47,6 @@ def agregar_persona(request: Request, persona: Persona = Depends(Persona.as_form
     message = "Persona agregada correctamente."
     return templates.TemplateResponse("index.html", {"request": request, "message": message})
     
-
 # GET: Buscar persona por id
 @app.get('/personas/{id}', tags=['personas'])
 def busqueda_persona(id: str):
@@ -60,7 +59,7 @@ def busqueda_persona(id: str):
 
 # Edit route
 @app.get('/personas/edit/{id}', tags=['personas'])
-def update_person(request: Request, id: str):
+def edit_person(request: Request, id: str):
     personas = leer_personas()
     for person in personas:
         if id == person['id']:
@@ -72,9 +71,8 @@ def update_person(request: Request, id: str):
 def actualizar_persona(request: Request, persona: Persona = Depends(Persona.as_form)):
     personas = leer_personas()
     update_persona = persona.dict()
-    print(persona)
     for persona in personas:
-        if persona['id'] == update_persona['id']:
+        if persona['id'] == update_persona['id'] :
             persona['nombre'] = update_persona['nombre']          
             persona['apellido'] = update_persona['apellido']          
             persona['id'] = update_persona['id']          
@@ -88,13 +86,14 @@ def actualizar_persona(request: Request, persona: Persona = Depends(Persona.as_f
 
 # DELETE: Eliminar persona por id (changed to get)
 @app.get('/personas/delete/{id}', tags=['personas'])
-def eliminar_persona(id):
+def eliminar_persona(request: Request,id):
     personas = leer_personas()
     for persona in personas:
         if persona['id'] == id:
             personas.remove(persona)
             escribir_personas(personas) #Escribo en el archivo la lista actualizada
-            return JSONResponse(status_code=200, content='Persona eliminada correctamente')
+            message = "Persona eliminada correctamente."
+            return templates.TemplateResponse("index.html", {"request": request, "message": message})
     return HTTPException(status_code=404, detail='Persona no encontrada')
     
 
