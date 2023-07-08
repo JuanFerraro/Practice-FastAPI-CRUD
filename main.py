@@ -56,7 +56,8 @@ def busqueda_persona(request: Request, id: str = Query()):
     personas = leer_personas()
     persona = buscar_persona(personas, id)
     if persona == False:
-        raise HTTPException(status_code=404, detail="Persona no encontrada")
+        error = 'Persona no encontrada.'
+        return templates.TemplateResponse("index.html", {"request": request, "error": error})
     else:
         return templates.TemplateResponse("index.html", {"request": request, "persona": persona})
 
