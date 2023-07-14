@@ -100,4 +100,6 @@ def eliminar_persona(request: Request,id):
             return templates.TemplateResponse("index.html", {"request": request, "message": message})
     return HTTPException(status_code=404, detail='Persona no encontrada')
     
-
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0",
+                port=int(os.environ.get("PORT", 8000)))
