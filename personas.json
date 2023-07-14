@@ -1,1 +1,18 @@
-[]
+[
+    {
+        "nombre": "Juan",
+        "apellido": "Barrios",
+        "id": "1022036036",
+        "edad": 26,
+        "estudios": "Estudiante ingenieria",
+        "puntaje": 6.5
+    },
+    {
+        "nombre": "Sebastian",
+        "apellido": "Ferraro",
+        "id": "1022035035",
+        "edad": 22,
+        "estudios": "Estudiante Ingenieria",
+        "puntaje": 5.4
+    }
+]
